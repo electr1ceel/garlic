@@ -25,13 +25,14 @@ sudo systemctl stop reboot_run_update.timer
 sudo systemctl stop fail2ban.service
 sudo systemctl stop suricata.service
 sudo systemctl disable reboot_run_update.service
-sudo systemctl disable reboot_run_update.timer  
+sudo systemctl disable reboot_run_update.timer
 sudo systemctl disable fail2ban.service
 sudo systemctl disable suricata.service
 sudo systemctl unmask reboot_run_update.service
-sudo systemctl unmask reboot_run_update.timer  
+sudo systemctl unmask reboot_run_update.timer
 sudo systemctl unmask fail2ban.service
 sudo systemctl unmask suricata.service
+sudo rm /lib/systemd/system/suricata.service
 sudo rm -R /etc/suricata
 sudo apt remove --purge suricata
 sudo apt remove --purge fail2ban
