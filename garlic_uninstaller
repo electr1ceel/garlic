@@ -34,6 +34,8 @@ sudo systemctl unmask reboot_run_update.timer
 sudo systemctl unmask fail2ban.service
 sudo systemctl unmask suricata.service
 sudo rm /lib/systemd/system/suricata.service
+sudo rm /lib/systemd/system/reboot_run_update.service
+sudo rm /lib/systemd/system/reboot_run_update.timer
 sudo rm -R /etc/suricata
 sudo apt remove --purge suricata
 sudo apt remove --purge fail2ban
