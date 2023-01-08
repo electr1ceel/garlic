@@ -17,6 +17,7 @@ sudo rm /usr/bin/update_ubuntu
 sudo rm /etc/sysctl.d/60-croissants.conf
 sudo rm /etc/sysctl.d/65-ddos.conf
 sudo rm /etc/rc.local*
+sudo rm /etc/logrotate.d/suricata
 sudo rm -R /var/lib/suricata
 sudo rm -R /var/log/suricata
 sudo crontab -r
