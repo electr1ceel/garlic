@@ -115,23 +115,6 @@ sudo rm /tmp/TorBulkExitList
 sudo rm /tmp/ip.txt
 cd ~
 
-# replace DROP to Alert when NSM_MODE="ids" else reset
-if [[ $NSM_MODE == "ids" ]]
-then
-	sed -i 's/drop/alert/g' /var/lib/suricata/rules/idps.rules
-	sed -i 's/drop/alert/g' /var/lib/suricata/rules/scanners.rules
-	sed -i 's/drop/alert/g' /var/lib/suricata/rules/malicious.rules
-	if [ -f /etc/suricata/drop.conf ]
-	then
-		sudo rm /etc/suricata/drop.conf
-	fi
-else
-	sed -i 's/alert/drop/g' /var/lib/suricata/rules/idps.rules
-	sed -i 's/alert/drop/g' /var/lib/suricata/rules/scanners.rules
-	sed -i 's/alert/drop/g' /var/lib/suricata/rules/malicious.rules
-	sudo cp /etc/suricata/drop.conf_sample /etc/suricata/drop.conf
-fi
-
 # loading rules
 sudo suricata-update
 #sudo kill -USR2 $(pidof suricata)
