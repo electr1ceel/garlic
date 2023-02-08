@@ -2135,9 +2135,9 @@ sudo iptables -I OUTPUT -j NFQUEUE --queue-balance $NF_IPTABLES
 END
 
 # create suricata.service
-sudo rm /lib/systemd/system/suricata.service
-sudo touch /lib/systemd/system/suricata.service
-sudo cat >> /lib/systemd/system/suricata.service <<END
+sudo rm /usr/lib/systemd/system/suricata.service
+sudo touch /usr/lib/systemd/system/suricata.service
+sudo cat >> /usr/lib/systemd/system/suricata.service <<END
 [Unit]
 Description=Suricata IDPS Daemon
 Wants=network.target syslog.target
