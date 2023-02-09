@@ -116,7 +116,7 @@ sudo rm /tmp/ip.txt
 cd ~
 
 # loading rules
-sudo suricata-update
+sudo suricata-update --no-test
 #sudo kill -USR2 $(pidof suricata)
 sudo suricatasc -c ruleset-reload-nonblocking
 
